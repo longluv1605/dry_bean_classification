@@ -2,103 +2,108 @@
 <h2>{{status}}</h2>
 <form action="predict" method="post">
 {% csrf_token %}
-<label for="Area">Area</label>
-<input id="Area" name="Area" type="number"
-{% if Area %}value="{{Area}}"{% endif %}
-/>
-<br/>
-
-<label for="Perimeter">Perimeter</label>
-<input id="Perimeter" name="Perimeter" type="number", step="0.00000000000000000001"
-{% if Perimeter %}value="{{Perimeter}}"{% endif %}
-/>
-<br/>
-
-<label for="MajorAxisLength">Major Axis Length</label>
-<input id="MajorAxisLength" name="MajorAxisLength" type="number, step="0.00000000000000000001"
-{% if MajorAxisLength %}value="{{MajorAxisLength}}"{% endif %}
-/>
-<br/>
-
-<label for="MinorAxisLength">Minor Axis Length</label>
-<input id="MinorAxisLength" name="MinorAxisLength" type="number, step="0.00000000000000000001"
-{% if MinorAxisLength %}value="{{MinorAxisLength}}"{% endif %}
-/>
-<br/>
-
-<label for="AspectRation">Aspect Ration</label>
-<input id="AspectRation" name="AspectRation" type="number, step="0.00000000000000000001"
-{% if AspectRation %}value="{{AspectRation}}"{% endif %}
-/>
-<br/>
-
-<label for="Eccentricity">Eccentricity</label>
-<input id="Eccentricity" name="Eccentricity" type="number", step="0.00000000000000000001"
-{% if Eccentricity %}value="{{Eccentricity}}"{% endif %}
-/>
-<br/>
-
-<label for="ConvexArea">Convex Area</label>
-<input id="ConvexArea" name="ConvexArea" type="number", step="0.00000000000000000001"
-{% if ConvexArea %}value="{{ConvexArea}}"{% endif %}
-/>
-<br/>
-
-<label for="EquivDiameter">Equiv Diameter</label>
-<input id="EquivDiameter" name="EquivDiameter" type="number, step="0.00000000000000000001"
-{% if EquivDiameter %}value="{{EquivDiameter}}"{% endif %}
-/>
-<br/>
-
-<label for="Extent">Extent</label>
-<input id="Extent" name="Extent" type="number, step="0.00000000000000000001"
-{% if Extent %}value="{{Extent}}"{% endif %}
-/>
-<br/>
-
-<label for="Solidity">Solidity</label>
-<input id="Solidity" name="Solidity" type="number, step="0.00000000000000000001"
-{% if Solidity %}value="{{Solidity}}"{% endif %}
-/>
-<br/>
-
-<label for="roundness">Roundness</label>
-<input id="roundness" name="roundness" type="number, step="0.00000000000000000001"
-{% if roundness %}value="{{roundness}}"{% endif %}
-/>
-<br/>
-
-<label for="Compactness">Compactness</label>
-<input id="Compactness" name="Compactness" type="number, step="0.00000000000000000001"
-{% if Compactness %}value="{{Compactness}}"{% endif %}
-/>
-<br/>
-
-<label for="ShapeFactor1">Shape Factor 1</label>
-<input id="ShapeFactor1" name="ShapeFactor1" type="number, step="0.00000000000000000001"
-{% if ShapeFactor1 %}value="{{ShapeFactor1}}"{% endif %}
-/>
-<br/>
-
-<label for="ShapeFactor2">Shape Factor 2</label>
-<input id="ShapeFactor2" name="ShapeFactor2" type="number, step="0.00000000000000000001"
-{% if ShapeFactor2 %}value="{{ShapeFactor2}}"{% endif %}
-/>
-<br/>
-
-<label for="ShapeFactor3">Shape Factor 3</label>
-<input id="ShapeFactor3" name="ShapeFactor3" type="number, step="0.00000000000000000001"
-{% if ShapeFactor3 %}value="{{ShapeFactor3}}"{% endif %}
-/>
-<br/>
-
-<label for="ShapeFactor4">Shape Factor 4</label>
-<input id="ShapeFactor4" name="ShapeFactor4" type="number, step="0.00000000000000000001"
-{% if ShapeFactor4 %}value="{{ShapeFactor4}}"{% endif %}
-/>
-<br/>
-
-
-<input type="submit" value="Submit test results"/>
+<div class="container col-12">
+    <div class="row">
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="Area">Area</label>
+            <input id="Area" name="Area" type="number"
+            {% if Area %}value="{{Area}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="Perimeter">Perimeter</label>
+            <input id="Perimeter" name="Perimeter" type="number" step="0.00001"
+            {% if Perimeter %}value="{{Perimeter}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="MajorAxisLength">Major Axis Length</label>
+            <input id="MajorAxisLength" name="MajorAxisLength" type="number" step="0.00001"
+            {% if MajorAxisLength %}value="{{MajorAxisLength}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="MinorAxisLength">Minor Axis Length</label>
+            <input id="MinorAxisLength" name="MinorAxisLength" type="number" step="0.00001"
+            {% if MinorAxisLength %}value="{{MinorAxisLength}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="AspectRation">Aspect Ration</label>
+            <input id="AspectRation" name="AspectRation" type="number" step="0.00001"
+            {% if AspectRation %}value="{{AspectRation}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="Eccentricity">Eccentricity</label>
+            <input id="Eccentricity" name="Eccentricity" type="number" step="0.00001"
+            {% if Eccentricity %}value="{{Eccentricity}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="ConvexArea">Convex Area</label>
+            <input id="ConvexArea" name="ConvexArea" type="number" step="0.00001"
+            {% if ConvexArea %}value="{{ConvexArea}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="EquivDiameter">Equiv Diameter</label>
+            <input id="EquivDiameter" name="EquivDiameter" type="number" step="0.00001"
+            {% if EquivDiameter %}value="{{EquivDiameter}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="Extent">Extent</label>
+            <input id="Extent" name="Extent" type="number" step="0.00001"
+            {% if Extent %}value="{{Extent}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="Solidity">Solidity</label>
+            <input id="Solidity" name="Solidity" type="number" step="0.00001"
+            {% if Solidity %}value="{{Solidity}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="roundness">Roundness</label>
+            <input id="roundness" name="roundness" type="number" step="0.00001"
+            {% if roundness %}value="{{roundness}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="Compactness">Compactness</label>
+            <input id="Compactness" name="Compactness" type="number" step="0.00001"
+            {% if Compactness %}value="{{Compactness}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="ShapeFactor1">Shape Factor 1</label>
+            <input id="ShapeFactor1" name="ShapeFactor1" type="number" step="0.00001"
+            {% if ShapeFactor1 %}value="{{ShapeFactor1}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="ShapeFactor2">Shape Factor 2</label>
+            <input id="ShapeFactor2" name="ShapeFactor2" type="number" step="0.00001"
+            {% if ShapeFactor2 %}value="{{ShapeFactor2}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="ShapeFactor3">Shape Factor 3</label>
+            <input id="ShapeFactor3" name="ShapeFactor3" type="number" step="0.00001"
+            {% if ShapeFactor3 %}value="{{ShapeFactor3}}"{% endif %}
+            />
+        </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <label for="ShapeFactor4">Shape Factor 4</label>
+            <input id="ShapeFactor4" name="ShapeFactor4" type="number" step="0.00001"
+            {% if ShapeFactor4 %}value="{{ShapeFactor4}}"{% endif %}
+            />
+        </div>
+    </div>
+    <div class="col-12" id="">
+        <input type="submit" value="Submit test results"/>
+    </div>
+</div>
 </form>
 {% include 'drybeans/footer.html' %}
