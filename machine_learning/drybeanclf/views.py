@@ -3,24 +3,36 @@ from .ml_models import model, get_prediction
 
 
 def index(request):
-    context = {
-        'status': 'Input test results'
-    }
-    return render(request, 'drybeans/index.html', context)
+    context = {"status": "Input test results"}
+    return render(request, "drybeans/index.html", context)
 
 
 def predict(request):
-    context = {
-        'status': 'Input test results'
-    }
+    context = {"status": "Input test results"}
     if request.method == "POST":
         prediction = get_prediction(model, request.POST)
         context = {
-            'status': f"Prediction = {prediction['class_idx']} = {prediction['class_name']}"
+            "status": f"Prediction = {prediction}"
         }
-        features = ["Pregnancies", "Glucose", "BloodPressure",
-                    "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
+        features = [
+            "Area",
+            "Perimeter",
+            "MajorAxisLength",
+            "MinorAxisLength",
+            "AspectRation",
+            "Eccentricity",
+            "ConvexArea",
+            "EquivDiameter",
+            "Extent",
+            "Solidity",
+            "roundness",
+            "Compactness",
+            "ShapeFactor1",
+            "ShapeFactor2",
+            "ShapeFactor3",
+            "ShapeFactor4",
+        ]
         for key in features:
             if key in request.POST:
                 context[key] = request.POST[key]
-    return render(request, 'diabetes/index.html', context)
+    return render(request, "drybeans/index.html", context)
